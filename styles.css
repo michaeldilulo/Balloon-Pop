@@ -26,3 +26,15 @@ button.btn.btn-success {
     font-size: 22px;
     border-radius: 10px;
 }
+
+button.btn.btn-dark {
+    margin-left: 25px;
+    max-height: 80px;
+    max-width: 200px;
+    font-size: 22px;
+    border-radius: 10px;
+}
+
+.hidden{
+    display: none;
+}
