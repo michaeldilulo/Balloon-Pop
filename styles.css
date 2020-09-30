@@ -38,3 +38,24 @@ button.btn.btn-dark {
 .hidden{
     display: none;
 }
+
+.card {
+    box-shadow: 2px 0 8px red;
+    width: 18rem;
+}
+
+.scoreboard {
+    width: 21rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.scoreboard-name {
+    margin-left: 220px;
+}

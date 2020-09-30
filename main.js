@@ -81,7 +81,8 @@ const stopBalloonPop = () => {
     currentBalloonPopCount = 0;
 
     stopBalloonPopClock();
-    drawFunction()
+    drawFunction();
+    drawScoreboard();
 }
 
 // #endregion
@@ -107,6 +108,7 @@ const setBalloonPopPlayer = (event) => {
     form.classList.add('hidden');
     // Keeps the local storage top score on the page
     drawFunction();
+    drawScoreboard();
 }
 
 const changeBalloonPopPlayer = () => {
@@ -125,3 +127,19 @@ function loadBalloonPopPlayers() {
         balloonPopPlayers = balloonPopPlayersData;
     }
 }
+
+const drawScoreboard = () => {
+    let template = "";
+
+    balloonPopPlayers.sort((p1, p2) => p2.popTopScore - p1.popTopScore)
+    balloonPopPlayers.forEach(balloonPopPlayers => {
+        template += `
+                <ul>
+                    <li>${balloonPopPlayers.name}<span class="scoreboard-name">${balloonPopPlayers.popTopScore}</span></li>
+                </ul>
+        `
+    })
+    document.getElementById('balloonPopPlayers').innerHTML = template;
+}
+
+drawScoreboard();
